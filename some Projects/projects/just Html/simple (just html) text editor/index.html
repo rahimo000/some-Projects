@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td align="center">
+                <fieldset>
+                    <legend style="text-align: center;">Style de texte</legend>
+                    <button onclick="gras();">gras</button>
+                    <button onclick="italique();">italic</button>
+                    <button onclick="souligne();">souligner</button>
+                    <button onclick="droit();">droit</button>
+                    <button onclick="gauche()">gauche</button>
+                    <button onclick="centre();">centré</button>
+                    <button onclick="justifie();">justifié</button>   
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <fieldset>
+                    <legend style="text-align: center;">taille de texte</legend>
+                    <button onclick="petite();">petit</button>
+                    <button onclick="moyenne();">moyen</button>
+                    <button onclick="grande();">grand</button>
+                    <input id="taille" type="number" value="14" onchange="changer_taille();" max="18" min="14">
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <fieldset>
+                    <legend style="text-align: center;">couleur du texte</legend>
+                    <input id="couleur" type="color" onchange="couleur();">
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <textarea name="entre a paragraph" id="area_01" cols="50" rows="5" 
+                style="font-size: 14px;border: 1px solid black;" oninput="verification();">votre commentaire nous intersse...</textarea>
+            </td>
+        </tr>
+        <tr><td align="center"><button  onclick="effacement();" id="eff_btn" >effacer le texte</button></td></tr>
+    </table>
+    <script type="text/javascript">
+        var area_01 = document.getElementById('area_01');
+        var eff_btn = document.getElementById('eff_btn');
+        var taille = document.getElementById('taille');
+        var color = document.getElementById('couleur');
+        function effacement(){
+            var d = confirm("Voulez-vous vraiment effacer le contenu ? ");
+            if(d==true) {area_01.value="";area_01.disabled="true";}
+        }
+        function verification(){
+        if(area_01.value=="") {console.log("here");eff_btn.disabled="true";}
+            else eff_btn.removeAttribute("disabled",false);
+        }
+        function gras(){
+            if(area_01.style.fontWeight=="bold"){
+                area_01.style.fontWeight="normal";
+            }
+            else{
+                area_01.style.fontWeight="bold";
+            }
+        }
+        function italique(){
+            if(area_01.style.fontStyle=="italic"){
+                area_01.style.fontStyle="normal";
+            }else{
+                area_01.style.fontStyle="italic";
+            }
+        }
+        function souligne(){
+            area_01.style.textDecoration="underline";
+        }
+        function droit(){
+            area_01.style.textAlign="right";  
+        }
+        function gauche(){
+            area_01.style.textAlign="left"; 
+        }
+        function centre(){
+            area_01.style.textAlign="center";  
+        }
+        function justifie(){
+            area_01.style.textAlign="justify";  
+        }
+        function petite(){
+            area_01.style.fontSize="14px"; 
+        }
+        function moyenne(){
+            area_01.style.fontSize="16px"; 
+        }
+        function grande(){
+            area_01.style.fontSize="18px"; 
+        }
+        function changer_taille(){
+            var t =taille.value+"px";
+            area_01.style.fontSize=t;
+        }
+        function couleur(){
+            c=color.value+"";
+            area_01.style.color=c;
+        }
+    </script>
+</body>
+</html>

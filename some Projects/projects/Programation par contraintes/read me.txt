@@ -1,0 +1,12 @@
+les fonction principale du program:
+
+lire le RDP a partire d un fichier donné (ex : a.out arg.txt)
+conversion du RDP initial en RDP arc-consistant (et affiche le résultat)
+si le RDP est inconsistant il affiche "inconsistant"
+
+les fonction secondaire du program:
+
+détecter si il y a un erreur du syntax du RDP donnée (ex : si il y'as un alphabet ou plusieur espaces)
+éliminer les valeurs redondants
+si il trouve pas le fichier il affiche un échec d'ouverture de fichier
+si vous oubliez de mettre l'argument (ex : a.out ) il ouvre le fichier test.txt (avec un message que vous avez pas entrez des argument )

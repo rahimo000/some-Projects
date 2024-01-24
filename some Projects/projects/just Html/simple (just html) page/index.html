@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>TP 2 - Formulaires HTML 5</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="w3.css">
+    <style>
+        header{
+            color:#B22222;
+            border: solid #B22222;
+            border-radius: 10px;
+            background-image: url("air_algérie.JPG");
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: 40% 80%;
+        }
+    </style>
+</head>
+
+<body>
+<header >
+	<table  width="100%">
+		<tr>
+			<td align="left">
+				<img src="air_algérie.JPG" width="300px" height="90px">
+			</td>
+			<td align="right">
+				<h1><i>Always caring for you</i></h1>
+			</td>
+		</tr>
+	</table>
+	<nav >
+		<ul>
+			<li style="display:inline"><a href="accueil.html">Accueil</a>&nbsp;&nbsp;&nbsp;</li>
+			<li style="display:inline"><a href="promotions.html">Offres promotionnelles</a>&nbsp;&nbsp;&nbsp;</li>
+			<li style="display:inline"><a href="vols.html">Programme de vols</a>&nbsp;&nbsp;&nbsp;</li>
+			<li style="display:inline"><a href="compagnie.html">Déclarez un retard</a>&nbsp;&nbsp;&nbsp;</li>
+			<li style="display:inline"><a href="contact.html">Contactez-nous</a>&nbsp;&nbsp;&nbsp;</li>
+		</ul>
+	</nav>	
+</header>
+<br>
+<div >
+	<h2 align="center">Inscription pour la formation d'<i>Hôtesse de l'air</i> / <i>Steward</i></h2>
+	<mark><b>Remarque:</b></mark> <b>(*) signifie un champ obligatoire</b>
+	<br><br>
+	<form method="POST" action="reception.PHP">
+		<fieldset>
+			<legend><b> Informations élémentaires </b></legend>
+			<table width="100%" align="center">
+				<tr>
+					<td><label><b>Nom (*): </b></label></td>
+					<td><input type="text" name="nom"  size="30" maxlength="15" required></td>
+				</tr>
+				<tr>
+					<td><label><b>Prénom (*): </b></label></td>
+					<td><input type="text" name="prenom"  size="30" maxlength="15" required></td>
+				</tr>
+				<tr>
+					<td><label><b>Genre: </b></label></td>
+					<td>
+						<input type="radio" name="sexualite" checked> Masculin<br>
+						<input type="radio" name="sexualite"> Féminin
+					</td>
+				</tr>
+				<tr>
+					<td><label><b>Date et lieu de naissance (*):</b></label></td>
+					<td><input type="date" name="date_naissance" min="1981-01-01" max="1991-01-01" required> à 
+					<select name="ville">
+						<option value="tlemcen" selected>Tlemcen</option>
+						<option value="tlemcen">Oran</option>
+						<option value="tlemcen">Alger</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label><b>Situation familiale: </b></label></td>
+					<td>
+						<input type="radio" name="situation"> Célibataire<br>
+						<input type="radio" name="situation" checked> Marié
+					</td>
+				</tr>
+				<tr>
+					<td><label><b>Prénom du père (*): </b></label></td>
+					<td><input type="text" name="nom_pere" size="30" maxlength="15" required></td>
+				</tr>
+				<tr>
+					<td><label><b>Nom et prénom de la mère (*): </b></label></td>
+					<td><input type="text" name="nom_prenom_mere" size="30" maxlength="30" required></td>
+				</tr>
+				<tr>
+					<td><label><b>Vos diplômes (.PDF ou .DOCX): </b></label></td>
+					<td><input type="file" name="diplomes" accept=".PDF, .DOCX" multiple></td>
+				</tr>
+				<tr>
+					<td><label><b>Quelques photos de vous: </b></label></td>
+					<td><input type="file" name="photo" accept=".PNG, .JPEG" multiple></td>
+				</tr>
+			</table>
+		</fieldset>
+	
+		<fieldset>
+			<legend align="center"><b> Validation de l'inscription </b></legend>
+            <table align="center">
+				<tr>
+					<td><b>Créez un mot de passe (*):</b></td>
+					<td><input type="password" name="password_1" required/></td>
+				</tr>
+				<tr>
+					<td><b>Tapez-le à nouveau (*):</b></td>
+					<td><input type="password" name="password_2" required/></td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2"><input type="reset" value="Réinitialisez l'inscription"/></td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2"><input type="submit" value="Soumettez l'inscription"/></td>
+				</tr>
+			</table>
+    </table>
+</fieldset>
+</form>
+	<br>
+</div>
+<br><br>
+</body>
+</html>
